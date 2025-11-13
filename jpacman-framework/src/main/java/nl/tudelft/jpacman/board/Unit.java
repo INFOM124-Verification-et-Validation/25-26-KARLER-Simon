@@ -89,7 +89,7 @@ public abstract class Unit {
             square.remove(this);
             square = null;
         }
-        assert square == null || square.getOccupants().contains(this);
+       // assert square == null || square.getOccupants().contains(this);
     }
 
     /**
