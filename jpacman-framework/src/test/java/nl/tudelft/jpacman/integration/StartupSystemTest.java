@@ -12,7 +12,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 /**
  * An example test class that conducts integration tests.
  */
-public class StartupSystemTest {
+class StartupSystemTest {
 
     private Launcher launcher;
 
@@ -20,7 +20,7 @@ public class StartupSystemTest {
      * Start a launcher, which can display the user interface.
      */
     @BeforeEach
-    public void before() {
+    void before() {
         launcher = new Launcher();
     }
 
@@ -28,7 +28,7 @@ public class StartupSystemTest {
      * Close the user interface.
      */
     @AfterEach
-    public void after() {
+    void after() {
         launcher.dispose();
     }
 
@@ -38,7 +38,7 @@ public class StartupSystemTest {
      */
     @Test
     @Disabled
-    public void gameIsRunning() {
+    void gameIsRunning() {
         launcher.launch();
 
         getGame().start();

@@ -25,6 +25,8 @@ class DirectionTest {
 
 
     /**
+     *
+     *
      * Do we get the correct delta when moving south?
      */
     @Test
