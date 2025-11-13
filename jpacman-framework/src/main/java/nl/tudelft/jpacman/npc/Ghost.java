@@ -17,6 +17,11 @@ import java.util.Random;
  * @author Jeroen Roosen
  */
 public abstract class Ghost extends Unit {
+
+    /**
+     * Random
+     */
+    private Random random;
     /**
      * The sprite map, one sprite for each direction.
      */
@@ -49,7 +54,7 @@ public abstract class Ghost extends Unit {
      * Tries to calculate a move based on the behaviour of the npc.
      *
      * @return an optional containing the move or empty if the current state of the game
-     * makes the ai move impossible
+     * makes the AI move impossible
      */
     public abstract Optional<Direction> nextAiMove();
 
@@ -64,6 +69,7 @@ public abstract class Ghost extends Unit {
         this.sprites = spriteMap;
         this.intervalVariation = intervalVariation;
         this.moveInterval = moveInterval;
+        this.random = new Random();
     }
 
     @Override
@@ -77,7 +83,7 @@ public abstract class Ghost extends Unit {
      * @return The suggested delay between moves in milliseconds.
      */
     public long getInterval() {
-        return this.moveInterval + new Random().nextInt(this.intervalVariation);
+        return this.moveInterval + this.random.nextInt(this.intervalVariation);
     }
 
     /**
@@ -97,7 +103,7 @@ public abstract class Ghost extends Unit {
         if (directions.isEmpty()) {
             return null;
         }
-        int i = new Random().nextInt(directions.size());
+        int i = this.random.nextInt(directions.size());
         return directions.get(i);
     }
 }
