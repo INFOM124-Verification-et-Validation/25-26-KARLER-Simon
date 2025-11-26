@@ -21,7 +21,7 @@ public abstract class Ghost extends Unit {
     /**
      * Random
      */
-    private Random random;
+    private final Random random;
     /**
      * The sprite map, one sprite for each direction.
      */
